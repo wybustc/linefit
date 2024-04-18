@@ -19,8 +19,9 @@ lf.add_gauss(4, 'sii2', 'n', sigma_tied=1, value_tied=1)
 lf.add_gauss(5, 'sii1', 'n', sigma_tied=1, value_tied=1)
 lf.add_gauss(6, 'Ha', 'b')# 'b' means this is a broad component
 lf.add_poly(7, order=1) # Add an 1-order polynominal to correct for local continuum fitting residual. This is optional.
+#NOTE  the searial number could be non-consecutive number but should be different from each other 
 ```
-In fact, when constructing the fitting function for ordinary line groups, and you can choose to use the templates in the procedure if you do not have special demands 
+In fact, when constructing the fitting function for ordinary line groups, and you can choose to use the templates in the procedure if you do not have special requirements 
 ```
 #Also for Ha region
 lf.templates('Ha+sii')# This can reach the same functionality as the above sentences 
