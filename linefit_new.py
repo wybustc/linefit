@@ -17,8 +17,16 @@ import re
 import traceback
 
 
-#when call the mfunction in the class, there are two ways: one is the 'linfit.function(self)' and the other is 'self.function()' 
-#what is the difference between that two methods? 
+'''
+Input parameter: 
+wave, flux, err 
+path_savefig: the path to save fitting figure 
+path_savefile: the path to save the initial and best fit parameters 
+path_reconstruct: the path to the file which was created by the this procedure, and it will extract the file contents to use 
+narrow_up: the upperlimits of the narrow lines 
+broad_low: the lowerlimits of the broad lines 
+
+'''
 class linefit:
 	# wave=None or wave here?,call the function must instantiate the obj?
 	def __init__(self,wave=None,flux=None,err=None,path_savefig=None,path_savefile=None,path_reconstruct=None,show=False,quiet=True,narrow_up=800,broad_low=1000,modify_initial_model='random',fit1=True,modifyP=True,MC=False,MC_number=1000,MC_saveresults=False,MC_savefig=False,MC_pool_number=6,desired_chi2=1,covert2simple=True,telluric=False,redshift=None,extra_mask=None):
