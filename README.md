@@ -1,6 +1,7 @@
 # linefit
 A flexible emission lines fitting procedure 
 
+
 # How to use 
 first initiate the instance 'linefit' 
 ```
@@ -9,6 +10,8 @@ lf=linefit(wave,flux,ferr,path_savefile=path_savefile, path_savefig)
 # path_savefile, the path to save the best-fit results
 # path_savefig,  the path to save the best-fit figure 
 ```
+
+
 Then construct the fitting function that will be used to fitting the emission lines spectra 
 ```
 #Here is an example for Ha region
@@ -21,11 +24,15 @@ lf.add_gauss(6, 'Ha', 'b')# 'b' means this is a broad component
 lf.add_poly(7, order=1) # Add an 1-order polynominal to correct for local continuum fitting residual. This is optional.
 #NOTE  the searial number could be non-consecutive number but should be different from each other 
 ```
+
+
 In fact, when constructing the fitting function for ordinary line groups, and you can choose to use the templates in the procedure if you do not have special requirements 
 ```
 #Also for Ha region
 lf.templates('Ha+sii')# This can reach the same functionality as the above sentences 
 ```
+
+
 Finally, used the function constructed above to fit the emission lines 
 ```
 lf.running() 
